@@ -42,6 +42,7 @@
 
   #app{
     overflow: hidden;
+    height: 100vh;
   }
   .transition {
     overflow: hidden;

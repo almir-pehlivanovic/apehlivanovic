@@ -7,7 +7,7 @@
         so you can use the :checked selector on it.
         -->
         <p class="menu-text">{{ title }}</p>
-        <input @click="menuClose" type="checkbox" />
+        <input @click="menuClose" type="checkbox"  v-model="checked" true-value="yes" false-value="no" />
         
         <!--
         Some spans to act as a hamburger.
@@ -22,14 +22,14 @@
         Too bad the menu has to be inside of the button
         but hey, it's pure CSS magic.
         -->
-        <ul id="menu">
-          <a href="#"><router-link tag="li" :to="{ name: 'Home' }">Home</router-link></a>
-          <a href="#"><router-link tag="li" :to="{ name: 'About' }">About</router-link></a>
-          <a href="#"><router-link tag="li" :to="{ name: 'Experience' }">Experience</router-link></a>
-          <a href="#"><router-link tag="li" :to="{ name: 'Projects' }">Projects</router-link></a>
-          <a href="#"><router-link tag="li" :to="{ name: 'Service' }">Service</router-link></a>
-          <a href="#"><router-link tag="li" :to="{ name: 'Contact' }">Contact</router-link></a>
-          <a href="#"><router-link tag="li" :to="{ name: 'WorkWith' }">Work With</router-link></a>
+        <ul class="menu">
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Home' }">Home</router-link></a>
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'About' }">About</router-link></a>
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Experience' }">Experience</router-link></a>
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Projects' }">Projects</router-link></a>
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Service' }">Service</router-link></a>
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Contact' }">Contact</router-link></a>
+          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'WorkWith' }">Work With</router-link></a>
         </ul>
       </div>
     </nav>
@@ -41,31 +41,37 @@ export default {
   data(){
     return{
       title: 'menu',
-      isActive: false
+      isActive: false,
+      checked: false,
     }
   },
   methods:{
     menuClose(){
       this.isActive = !this.isActive;
       if(this.isActive){
-        this.title = 'clsoe';
+        this.title = 'close';
+        this.checked = true;
       }else{
         this.title = 'menu'
+        this.checked = false
       }
+    },
+    menuActive(){
+       this.checked = false;
     }
   }
 }
 </script>
 
 <style>
+.hidden{
+  display: none;
+}
 .menu-text{
   position: absolute;
   left: 40px;
   top: -3px;
   z-index: 2;
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
 }
 
 /* 
@@ -181,13 +187,14 @@ export default {
  * Make this absolute positioned
  * at the top left of the screen
  */
-#menu
+.menu
 {
   position: absolute;
   width: 100%;
   margin: -100px 0 0 -50px;
   padding: 50px;
   padding-top: 125px;
+  height: 100vh;
   
   background: #ededed;
   list-style-type: none;
@@ -195,12 +202,12 @@ export default {
   /* to stop flickering of text in safari */
   
   transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  transform: translate(0, -100%);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-#menu li
+.menu li
 {
   padding: 10px 0;
   font-size: 22px;
