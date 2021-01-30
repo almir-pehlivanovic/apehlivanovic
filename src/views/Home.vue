@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <h1>Home page</h1>
+    <!-- <h1>Home page</h1>
     <br>
-      <router-link :to="{ name: 'Experience' }">Experience</router-link>
+      <router-link :to="{ name: 'Experience' }">Experience</router-link> -->
   </div>
 </template>
 
@@ -18,4 +18,10 @@ export default {
   }
 }
 </script>
+
+<style  scoped>
+.home{
+  height: 100vh;
+}
+</style>
 
