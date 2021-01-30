@@ -8,7 +8,11 @@
         -->
         <p class="menu-text">{{ title }}</p>
         <input @click="menuClose" type="checkbox"  v-model="checked" true-value="yes" false-value="no" />
-        
+
+        <a href="#"><router-link :to="{ name: 'Home' }"> <img :class="{'hidden': isActive}" src="../assets/img/logo.png" alt=""> </router-link></a>
+        <a @click="menuClose" href="#"><router-link :to="{ name: 'Home' }"> <img :class="{'hidden': !isActive}" src="../assets/img/logo.png" alt=""> </router-link></a>
+         
+       
         <!--
         Some spans to act as a hamburger.
         
@@ -23,13 +27,13 @@
         but hey, it's pure CSS magic.
         -->
         <ul class="menu">
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Home' }">Home</router-link></a>
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'About' }">About</router-link></a>
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Experience' }">Experience</router-link></a>
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Projects' }">Projects</router-link></a>
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Service' }">Service</router-link></a>
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'Contact' }">Contact</router-link></a>
-          <a @click="menuActive" href="#"><router-link tag="li" :to="{ name: 'WorkWith' }">Work With</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Home' }">Home</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'About' }">About</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Experience' }">Experience</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Projects' }">Projects</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Service' }">Service</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Contact' }">Contact</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'WorkWith' }">Work With</router-link></a>
         </ul>
       </div>
     </nav>
@@ -45,6 +49,7 @@ export default {
       checked: false,
     }
   },
+
   methods:{
     menuClose(){
       this.isActive = !this.isActive;
@@ -55,23 +60,23 @@ export default {
         this.title = 'menu'
         this.checked = false
       }
-    },
-    menuActive(){
-       this.checked = false;
     }
   }
 }
 </script>
 
 <style>
+
 .hidden{
   display: none;
 }
 .menu-text{
   position: absolute;
   left: 40px;
-  top: -3px;
+  top: -5.5px;
   z-index: 2;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
 
 /* 
@@ -144,6 +149,18 @@ export default {
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
 }
+#menuToggle img{
+    position: absolute;
+    z-index: 2;
+    height: 60px;
+    width: 60px;
+    top: 35px;
+    right: 80px;
+    transform-origin: 0% 0%;
+    transform: translate(0, -100%);
+    
+    transition: transform 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
+}
 
 #menuToggle span:first-child
 {
@@ -192,7 +209,6 @@ export default {
   position: absolute;
   width: 100%;
   margin: -100px 0 0 -50px;
-  padding: 50px;
   padding-top: 125px;
   height: 100vh;
   
@@ -204,13 +220,21 @@ export default {
   transform-origin: 0% 0%;
   transform: translate(0, -100%);
   
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
 .menu li
 {
   padding: 10px 0;
   font-size: 22px;
+  transform: translateX(35%);
+  line-height: 2;
+}
+
+@media (min-width: 640px){
+  .menu li {
+    font-size: 44px;
+  }
 }
 
 /*

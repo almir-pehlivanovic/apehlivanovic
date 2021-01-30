@@ -34,15 +34,21 @@
     }
   }
 </script>
+
 <style>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
   *{
     padding: 0;
     margin: 0; 
   }
 
   #app{
+    font-family: 'Open Sans', sans-serif;
     overflow: hidden;
     height: 100vh;
+    background: oldlace;
   }
   .transition {
     overflow: hidden;
@@ -55,7 +61,7 @@
     top: 0;
   }
   .router-view-enter-active {
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.8s ease-in-out;
     z-index: 2;
     transform: translateX(100%);
   }
@@ -70,7 +76,7 @@
     z-index: -1;
   }
   .router-view-back-leave-active {
-    transition: transform 0.6s ease-in-out;
+    transition: transform 0.8s ease-in-out;
     z-index: 2;
     transform: translateX(0%);
   }
