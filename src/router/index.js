@@ -1,6 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import About from '../views/About.vue'
+import Experience from '../views/Experience.vue'
+import Projects from '../views/Projects.vue'
+import Service from '../views/Service.vue'
+import Contact from '../views/Contact.vue'
+import WorkWith from '../views/WorkWith.vue'
+import NotFound from '../views/NotFound.vue'
+
 
 Vue.use(VueRouter)
 
@@ -13,10 +21,37 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: About
+  },
+  {
+    path: '/experience',
+    name: 'Experience',
+    component: Experience
+  },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: Projects
+  },
+  {
+    path: '/service',
+    name: 'Service',
+    component: Service
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
+    path: '/work-with',
+    name: 'WorkWith',
+    component: WorkWith
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 

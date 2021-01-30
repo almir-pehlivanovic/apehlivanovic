@@ -1,32 +1,86 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <template>
+    <div id="app">
+      <div id="nav">
+        <app-header></app-header>
+      </div>
+      <transition
+        :name="$store.state.pageTransition.name"
+        :mode="$store.state.pageTransition.mode"
+        v-on:after-enter="afterEnter"
+        v-on:after-leave="afterLeave"
+      >
+        <router-view class="transition"/>
+      </transition>
     </div>
-    <router-view/>
-  </div>
-</template>
+  </template>
 
+
+<script>
+import Store from "./store/index";
+
+import Header from './components/Header'
+
+export default {
+  components:{
+    'app-header': Header
+  },
+  methods: {
+    afterEnter: () => {
+      window.scrollTo(0, 0);
+    },
+    afterLeave: () => {
+      Store.commit("setPageTransition", "default");
+    }
+  }
+}
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
+  #nav {
+    padding: 30px;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+
+  .transition {
+  overflow: hidden;
+}
+.router-view-enter-active, .router-view-back-enter-active, .router-view-leave-active, .router-view-back-leave-active {
+  position: fixed;
+  width: 100%;
+  background: white;
+  min-height: 100vh;
+  top: 0;
+}
+.router-view-enter-active {
+  transition: transform 0.5s ease-in-out;
+  z-index: 2;
+  transform: translateX(100%);
+}
+.router-view-enter-to {
+  z-index: 2;
+  transform: translateX(0%);
+}
+.router-view-leave-active {
+  z-index: -1;
+}
+.router-view-leave-to {
+  z-index: -1;
+}
+.router-view-back-leave-active {
+  transition: transform 0.5s ease-in-out;
+  z-index: 2;
+  transform: translateX(0%);
+}
+.router-view-back-leave-to {
+  z-index: 2;
+  transform: translateX(100%);
 }
 </style>
