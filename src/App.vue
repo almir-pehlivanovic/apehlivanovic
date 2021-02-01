@@ -45,11 +45,11 @@
   }
   #app{
     font-family: 'Open Sans', sans-serif;
-    overflow: hidden;
+    overflow: hidden !important;
     height: 100vh;
   }
   .transition {
-    overflow: hidden;
+    overflow: hidden !important;
   }
   .router-view-enter-active, .router-view-back-enter-active, .router-view-leave-active, .router-view-back-leave-active {
     position: absolute;

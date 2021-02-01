@@ -6,7 +6,7 @@
         A fake / hidden checkbox is used as click reciever,
         so you can use the :checked selector on it.
         -->
-        <p class="menu-text">{{ title }}</p>
+        <p class="menu-text" :style="{color: activeColor }">{{ title }}</p>
         <input @click="menuClose" type="checkbox"  v-model="checked" true-value="yes" false-value="no" />
 
         <a href="#"><router-link :to="{ name: 'Home' }"> <img :class="{'hidden': isActive}" src="../assets/img/logo.png" alt=""> </router-link></a>
@@ -47,6 +47,7 @@ export default {
       title: 'menu',
       isActive: false,
       checked: false,
+      activeColor: '#fff',
     }
   },
 
@@ -56,9 +57,11 @@ export default {
       if(this.isActive){
         this.title = 'close';
         this.checked = true;
+        this.activeColor = '#232323'
       }else{
         this.title = 'menu'
         this.checked = false
+        this.activeColor = '#fff'
       }
     }
   }
@@ -79,6 +82,7 @@ nav{
   z-index: 999;
   font-weight: 700;
   letter-spacing: -1px;
+  transition: color 0.8s ease-in-out;
 }
 
 /* 
