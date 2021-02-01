@@ -32,8 +32,8 @@
           <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Experience' }">Experience</router-link></a>
           <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Projects' }">Projects</router-link></a>
           <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Service' }">Service</router-link></a>
-          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Contact' }">Contact</router-link></a>
           <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'WorkWith' }">Work With</router-link></a>
+          <a @click="menuClose" href="#"><router-link tag="li" :to="{ name: 'Contact' }">Contact</router-link></a>
         </ul>
       </div>
     </nav>
