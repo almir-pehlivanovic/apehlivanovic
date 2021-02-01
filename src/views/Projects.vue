@@ -9,3 +9,10 @@ export default {
 
 }
 </script>
+
+<style scoped>
+.projects{
+  height: 100vh;
+  background: blueviolet;
+}
+</style>

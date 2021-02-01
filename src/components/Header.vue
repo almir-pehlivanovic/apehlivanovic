@@ -66,7 +66,9 @@ export default {
 </script>
 
 <style>
-
+nav{
+  height: 0;
+}
 .hidden{
   display: none;
 }
@@ -74,7 +76,7 @@ export default {
   position: absolute;
   left: 40px;
   top: -5.5px;
-  z-index: 2;
+  z-index: 999;
   font-weight: 700;
   letter-spacing: -1px;
 }
@@ -122,7 +124,7 @@ export default {
   cursor: pointer;
   
   opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  z-index: 999; /* and place it over the hamburger */
   
   -webkit-touch-callout: none;
 }

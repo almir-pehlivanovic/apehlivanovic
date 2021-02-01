@@ -43,40 +43,30 @@
     padding: 0;
     margin: 0; 
   }
-
   #app{
     font-family: 'Open Sans', sans-serif;
     overflow: hidden;
     height: 100vh;
-    background: oldlace;
   }
   .transition {
     overflow: hidden;
   }
   .router-view-enter-active, .router-view-back-enter-active, .router-view-leave-active, .router-view-back-leave-active {
-    position: fixed;
+    position: absolute;
     width: 100%;
-    background: white;
-    min-height: 100vh;
-    top: 0;
   }
-  .router-view-enter-active {
-    transition: transform 0.8s ease-in-out;
+    .router-view-leave-active {
+    transition: transform 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
     z-index: 2;
-    transform: translateX(100%);
-  }
-  .router-view-enter-to {
-    z-index: 2;
-    transform: translateX(0%);
-  }
-  .router-view-leave-active {
-    z-index: -1;
+    transform: translateX(-100%);
   }
   .router-view-leave-to {
-    z-index: -1;
+    z-index: 2;
+    transform: translateX(-100%);
   }
   .router-view-back-leave-active {
-    transition: transform 0.8s ease-in-out;
+    /* transition: transform 0.8s ease-in-out; */
+    transition: transform 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
     z-index: 2;
     transform: translateX(0%);
   }

@@ -20,3 +20,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.experience{
+  height: 100vh;
+  background: bisque; 
+}
+</style>

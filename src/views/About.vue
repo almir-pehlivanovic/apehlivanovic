@@ -7,5 +7,6 @@
 <style scoped>
 .about{
   height: 100vh;
+  background: turquoise;
 }
 </style>
