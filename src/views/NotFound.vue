@@ -37,8 +37,8 @@ export default {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: black;
-    opacity: 0.3;
+    background: #08305D;
+    opacity: 0.4;
   }
   .not-found{
     height: 100vh;

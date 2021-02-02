@@ -45,11 +45,30 @@
   }
   #app{
     font-family: 'Open Sans', sans-serif;
-    overflow: hidden !important;
     height: 100vh;
+    overflow-x:hidden;
   }
-  .transition {
-    overflow: hidden !important;
+  .overflow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #08305D;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  .video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -2;
+  }
+  .transition{
+    overflow-x: hidden;
+    height: 100vh;
   }
   .router-view-enter-active, .router-view-back-enter-active, .router-view-leave-active, .router-view-back-leave-active {
     position: absolute;

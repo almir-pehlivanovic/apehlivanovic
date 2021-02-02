@@ -1,8 +1,7 @@
 <template>
   <div class="work-with">
-      <h1>Work with section</h1>
-      <br>
-      <br>
+    <div class="overflow"></div>
+    <img src="../assets/img/workWith.jpg" alt="">
       <button @click="goBack()">Previous page</button>
       <router-link  :to="{ name: 'Contact' }">Contact</router-link>
   </div>
@@ -33,7 +32,7 @@ export default {
       this.touch.endX = event.touches[0].clientX;
     },
     touchend() {
-      if(!this.touch.endX || Math.abs(this.touch.endX - this.touch.startX) < 20)
+      if(!this.touch.endX || Math.abs(this.touch.endX - this.touch.startX) < 40)
       return;
       if(this.touch.endX < this.touch.startX){
           this.$store.commit("setPageTransition", "default");
@@ -58,9 +57,13 @@ export default {
 </script>
 
 <style scoped>
-  .work-with{
+  .work-with img {
     height: 100vh;
-    background: chocolate;
+    width: 100vw;
+    z-index: -2;
+    object-fit: cover;
+    position: absolute;
   }
+    
 </style>
 

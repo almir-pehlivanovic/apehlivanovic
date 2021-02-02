@@ -1,8 +1,7 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <br>
-    <br>
+    <div class="overflow"></div>
+    <img src="../assets/img/aboutMe.jpg" alt="">
       <button @click="goBack()">Previous page</button>
       <router-link  :to="{ name: 'Experience' }">Experience</router-link>
   </div>
@@ -34,7 +33,7 @@ export default {
       this.touch.endX = event.touches[0].clientX;
     },
     touchend() {
-      if(!this.touch.endX || Math.abs(this.touch.endX - this.touch.startX) < 20)
+      if(!this.touch.endX || Math.abs(this.touch.endX - this.touch.startX) < 40)
       return;
       if(this.touch.endX < this.touch.startX){
           this.$store.commit("setPageTransition", "default");
@@ -59,8 +58,11 @@ export default {
 </script>
 
 <style scoped>
-.about{
-  height: 100vh;
-  background: turquoise;
-}
+  .about img {
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+    object-fit: cover;
+    position: absolute;
+  }
 </style>

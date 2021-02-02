@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="test">
     <nav role="navigation">
       <div id="menuToggle">
         <!--
@@ -216,7 +216,7 @@ nav{
   width: 100%;
   margin: -100px 0 0 -50px;
   padding-top: 125px;
-  height: 100vh;
+  height: 88.2vh;
   
   background: #ededed;
   list-style-type: none;
@@ -240,6 +240,10 @@ nav{
 @media (min-width: 640px){
   .menu li {
     font-size: 44px;
+    line-height: 1.5;
+  }
+  .menu {
+    height: 90vh;
   }
 }
 
