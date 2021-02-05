@@ -29,7 +29,7 @@
     <div class="scroll">
 
         <h1>Projects</h1>
-        <h5>I'M OFFERING</h5>
+        <h5>MOST RECENT</h5>
         
         <div class="service-section">
           <div class="service-section-left">
