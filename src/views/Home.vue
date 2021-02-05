@@ -112,7 +112,7 @@ export default {
     transition: all 0.3s ease-in-out;
   }
   .home-text h1{
-    font-size: 7rem;
+    font-size: 10rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
   }
