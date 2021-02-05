@@ -10,7 +10,7 @@
         <input @click="menuClose" type="checkbox"  v-model="checked" true-value="yes" false-value="no" />
 
         <a href="#"><router-link :to="{ name: 'Home' }"> <img :class="{'hidden': isActive}" src="../assets/img/logo.png" alt=""> </router-link></a>
-        <a @click="menuClose" href="#"><router-link :to="{ name: 'Home' }"> <img :class="{'hidden': !isActive}" src="../assets/img/logo.png" alt=""> </router-link></a>
+        <a @click="menuClose" href="#"><router-link :to="{ name: 'Home' }"> <img :class="{'hidden': !isActive}" src="../assets/img/logoBlack.png" alt=""> </router-link></a>
          
        
         <!--
@@ -74,6 +74,7 @@ nav{
 }
 .hidden{
   display: none;
+  transition: all 0.8s ease-in-out;
 }
 .menu-text{
   position: absolute;
