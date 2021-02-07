@@ -1,1 +1,68 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><meta name="description" content="Experienced young Developer with passion!"><meta name="keywords" content="Web Design, Web Development, Portfolio, Almir, Pehlivanovic"><meta property="og:title" content="Portfolio | Almir"><meta property="og:description" content="Experienced young Developer with passion for web development!"><meta property="og:image" content="https://apehlivanovic.netlify.app/portfolio-site.png"><meta property="og:type" content="website"><meta property="og:site_name" content="Portfolio | Almir"><meta property="og:url" content="https://apehlivanovic.netlify.app"><title>apehlivanovic</title><link href="/css/app.b7dcd7da.css" rel="preload" as="style"><link href="/js/app.a886806a.js" rel="preload" as="script"><link href="/js/chunk-vendors.d76e6842.js" rel="preload" as="script"><link href="/css/app.b7dcd7da.css" rel="stylesheet"></head><body style="overflow-x: hidden;"><noscript><strong>We're sorry but apehlivanovic doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.d76e6842.js"></script><script src="/js/app.a886806a.js"></script></body></html>
+<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><meta name="description" content="Experienced young Developer with passion!"><meta name="keywords" content="Web Design, Web Development, Portfolio, Almir, Pehlivanovic"><meta property="og:title" content="Portfolio | Almir"><meta property="og:description" content="Experienced young Developer with passion for web development!"><meta property="og:image" content="https://apehlivanovic.netlify.app/portfolio-site.png"><meta property="og:type" content="website"><meta property="og:site_name" content="Portfolio | Almir"><meta property="og:url" content="https://apehlivanovic.netlify.app"><title>apehlivanovic</title><link href="/css/app.ef4b2510.css" rel="preload" as="style"><link href="/js/app.35050044.js" rel="preload" as="script"><link href="/js/chunk-vendors.d76e6842.js" rel="preload" as="script"><link href="/css/app.ef4b2510.css" rel="stylesheet"></head><body style="overflow-x: hidden;"><noscript><strong>We're sorry but apehlivanovic doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"><div class="page-loader"><img src="../assets/img/logo.png" alt=""><div class="loader-text"><h1>Almir Pehlivanovic<div class="loader-background"></div></h1><h5>Bachelor of Electrical Engineering & Web Developer<div class="loader-background"></div></h5></div></div></div><style>.page-loader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #08305D;
+        }
+        .page-loader img{
+          width: 100px;
+          height: 100px;
+          transition: all 0.8s ease-in-out;
+          filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
+          animation: zoomIn 1s cubic-bezier(0.77,0.2,0.05,1.0);
+          z-index: 99;
+        }
+        .loader-text{
+          color: #cdcdcd;
+            /* animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0); */
+        }
+        .loader-text h1, .loader-text h5{
+          position: relative;
+        }
+        .loader-text h1 div, .loader-text h5 div{
+          background: #08305D;
+          z-index: 1;
+          position: absolute;
+          top: 0;
+          right: -1px;
+          bottom: 0;
+          left:-2px;
+          animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0) 1s;
+          animation-fill-mode: forwards;
+        }
+        .loader-text h5 div{
+          animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0) 1.3s;
+          animation-fill-mode: forwards;
+        }
+        @keyframes zoomIn {
+          0% {
+            opacity: 0;
+            transform: translateX(100%);
+          }
+          100% {
+              transform: translateX(0%);
+              opacity: 1;
+          }
+        }
+        @keyframes slideRight
+        {
+          0% {
+            transform: translateX(0%);
+          }
+          100% {
+              transform: translateX(100%);
+          }
+        }</style><script>var isLoaded = false;
+        var loading = document.querySelector(".page-loader")
+          loading.onreadystatechange = () =>{
+            if(document.readyState == "complete"){
+              isLoaded = true;
+              loading.style.display = 'none'
+            }
+        }
+        // ... do things with the loading container</script><script src="/js/chunk-vendors.d76e6842.js"></script><script src="/js/app.35050044.js"></script></body></html>
