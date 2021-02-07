@@ -99,9 +99,11 @@ export default {
   }
   .left-line{
     width: 20%;
+    animation: slideLeft 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
   }
   .right-line{
     width: 40%;
+    animation: slideRight 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
   }
   .home-text{
     color: #cdcdcd;
@@ -116,12 +118,14 @@ export default {
     font-weight: bold;
     transition: all 0.3s ease-in-out;
     filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
+    animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0);
   }
   .home-text h2{
     font-size: 4rem;
     transition: all 0.3s ease-in-out;
     font-weight: 300;
     filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
+    animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0);
   }
   .home-explore{
     display: flex;
@@ -258,6 +262,23 @@ export default {
     }
     .home-text h2 {
       font-size: 2rem;
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);;
+    }
+  }
+   @keyframes slideRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);;
     }
   }
 </style>

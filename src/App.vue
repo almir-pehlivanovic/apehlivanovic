@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+
+    <app-page-loader></app-page-loader>
     
     <app-header></app-header>
   
@@ -19,10 +21,12 @@
   import Store from "./store/index";
 
   import Header from './components/Header'
+  import PageLoader from './components/PageLoader'
 
   export default {
     components:{
-      'app-header': Header
+      'app-header': Header,
+      'app-page-loader': PageLoader
     },
     methods: {
       afterEnter: () => {
@@ -75,7 +79,7 @@
     position: absolute;
     width: 100%;
   }
-    .router-view-leave-active {
+  .router-view-leave-active {
     transition: transform 0.8s cubic-bezier(0.77,0.2,0.05,1.0);
     z-index: 2;
     transform: translateX(-100%);

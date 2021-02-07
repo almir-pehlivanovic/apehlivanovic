@@ -154,6 +154,7 @@ export default {
     right: 0;
     bottom: 0;
     overflow: hidden;
+    height: 100vh;
   }
   .experience-parallax video {
     width: 100vw;
@@ -171,7 +172,7 @@ export default {
    */
 
   .scroll{
-    width: 70%;
+    width: 80%;
     background: #f0f0f3;
     transform: translateY(100vh) translateZ(0);
     padding: 120px;
@@ -225,9 +226,14 @@ export default {
     flex-wrap: wrap;
     overflow: hidden;
   }
+  @media (max-width: 1550px) {
+    .scroll{
+      padding: 60px;
+    }
+  }
   @media (max-width: 1180px){
     .scroll{
-      width: 60%;
+      width: 70%;
     }
     .service-section-right{
       width: 100%;
@@ -241,13 +247,18 @@ export default {
       font-size: 2.5rem;
     }
   }
+  @media (max-width: 850px){
+    .scroll h1{
+        font-size: 4.3rem;
+    }
+  }
   @media (max-width: 455px){
     .scroll{
       padding: 20px !important;
       padding-bottom: 40px !important;
     }
     .scroll h1 {
-      font-size: 3rem !important;
+      font-size: 2.5rem !important;
       padding-bottom: 60px !important;
       padding-top: 40px;
     }
@@ -398,7 +409,7 @@ export default {
       padding:40px;
     }
     .scroll h1 {
-      font-size: 4rem;
+      font-size: 3rem;
       padding-bottom: 80px;
     }
     .scroll h5{
@@ -441,7 +452,7 @@ export default {
       right: 70px;
     }
     .scroll h1{
-      font-size: 2.4rem !important;
+      font-size: 2.3rem !important;
     }
   }
   @media (max-width: 340px) {

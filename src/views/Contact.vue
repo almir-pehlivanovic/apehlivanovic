@@ -42,8 +42,9 @@
                 <p>Please feel free to drop me a line. I will get back to you as soon as possible, you need more information or want an offer, contact me by entering your email, alternatively, you can use the social links.</p>
             </div>
             <div class="service-section-right-content">
-              <form action="" class="contact-form">
-                <input type="email" placeholder="Your email *" required>
+              <p class="text-success" v-if="textSuccess">{{ text }}</p>
+              <form action="" @submit.prevent="sendEmail" class="contact-form">
+                <input type="email" v-model="email" name="email" placeholder="Your email" required>
                 <button class="download-button" type="submit">Send</button>
               </form>
                 <!-- <h3>Web Development</h3>
@@ -63,10 +64,17 @@ export default {
         startX: 0,
         endX: 0
       },
-      hover: false
+      hover: false,
+      textSuccess: false,
+      text: 'Your email was sent succesfully!',
+      email: ''
     }
   },
   methods: {
+    sendEmail(){
+      this.textSuccess = true;
+      this.email = ''
+    },
     mouseMove(e){
       let mouseX = e.clientX;
       let mouseY = e.clientY;
@@ -118,6 +126,9 @@ export default {
 </script>
 
 <style scoped>
+  .text-success{
+    color: teal !important;
+  }
   .contact-parallax{
     perspective: 1000px;
     position: absolute;
@@ -126,6 +137,7 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
+    height: 100vh;
     overflow: hidden;
   }
   .contact-parallax video {
@@ -145,7 +157,7 @@ export default {
    */
 
   .scroll{
-    width: 70%;
+    width: 80%;
     background: #f0f0f3;
     transform: translateY(100vh) translateZ(0);
     padding: 120px;
@@ -204,7 +216,7 @@ export default {
   }
   @media (max-width: 1180px){
     .scroll{
-      width: 60%;
+      width: 70%;
     }
     .service-section-right{
       width: 100%;
@@ -338,8 +350,12 @@ export default {
     position: absolute;
     animation: moveUpDown 1s linear infinite;
   }
-
-  @media (max-width: 890px) {
+  @media (max-width: 1550px) {
+    .scroll{
+      padding: 60px;
+    }
+  }
+  @media (max-width: 1095px) {
     .scroll{
       padding:80px;
     }

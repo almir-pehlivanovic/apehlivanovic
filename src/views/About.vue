@@ -174,6 +174,7 @@ export default {
     right: 0;
     bottom: 0;
     overflow: hidden;
+    height: 100vh;
   }
   .about-parallax img {
     height: 100vh;
@@ -187,7 +188,7 @@ export default {
    */
 
   .scroll{
-    width: 70%;
+    width: 80%;
     background: #f0f0f3;
     transform: translateY(100vh) translateZ(0);
     padding: 120px;
@@ -253,7 +254,7 @@ export default {
   }
   @media (max-width: 1180px){
     .scroll{
-      width: 60%;
+      width: 70%;
     }
     .service-section-right{
       width: 100%;
@@ -380,7 +381,12 @@ export default {
     transition: all 0.3s ease-in-out;
     border: 1px solid black;
   }
-  @media (max-width: 890px) {
+  @media (max-width: 1550px) {
+    .scroll{
+      padding: 60px;
+    }
+  }
+  @media (max-width: 1095px) {
     .scroll{
       padding:80px;
     }
