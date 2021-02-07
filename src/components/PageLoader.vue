@@ -20,10 +20,17 @@ export default {
         }
     },
     mounted(){
-        document.onreadystatechange = () =>{
-            if(document.readyState == "complete"){
-                this.isLoaded = true;
-            }
+        this.showLoader()
+    },
+    methods:{
+        showLoader(){
+            setTimeout(() => {
+                document.onreadystatechange = () =>{
+                    if(document.readyState == "complete"){
+                        this.isLoaded = true;
+                    }
+                }
+            }, 5000)
         }
     }
 }
