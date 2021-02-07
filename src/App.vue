@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-    <app-page-loader></app-page-loader>
+    <!-- <app-page-loader></app-page-loader> -->
     
     <app-header></app-header>
   
@@ -21,12 +21,12 @@
   import Store from "./store/index";
 
   import Header from './components/Header'
-  import PageLoader from './components/PageLoader'
+  // import PageLoader from './components/PageLoader'
 
   export default {
     components:{
       'app-header': Header,
-      'app-page-loader': PageLoader
+      // 'app-page-loader': PageLoader
     },
     methods: {
       afterEnter: () => {
