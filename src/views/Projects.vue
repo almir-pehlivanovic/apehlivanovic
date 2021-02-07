@@ -42,52 +42,12 @@
             </ul>
           </div>
           <div class="service-section-right">
-            <div class="service-section-right-content">
-                <h3>Modern portfolio</h3>
-                  <a target="_blank" href="#">
+            <div v-for="(project, index) in projects" :key="index" class="service-section-right-content">
+                <h3>{{ project.title }}</h3>
+                  <a target="_blank" :href="project.url">
                     <div class="hover-image">
-                      <img class="project-image" src="../assets/img/modern-portfolio.png" alt="">
-                      <p>desing</p>
-                      <p>development</p>
-                    </div>
-                  </a>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Q&A coming soon</h3>
-                  <a href="#">
-                    <div class="hover-image">
-                      <img class="project-image" src="../assets/img/q&a.png" alt="">
-                      <p>desing</p>
-                      <p>development</p>
-                    </div>
-                  </a>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Inbox UI</h3>
-                  <a target="_blank" href="https://ui-inbox.herokuapp.com/">
-                    <div class="hover-image">
-                      <img class="project-image" src="../assets/img/inboxUI.png" alt="">
-                      <p>development</p>
-                    </div>
-                  </a>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Booking Rooms</h3>
-                  <a target="_blank" href="http://booking-rooms.herokuapp.com/">
-                    <div class="hover-image">
-                      <img class="project-image" src="../assets/img/booking-rooms.png" alt="">
-                      <p>desing</p>
-                      <p>development</p>
-                    </div>
-                  </a>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Portfolio</h3>  
-                  <a target="_blank" href="https://pehlivanovic.netlify.app/">
-                    <div class="hover-image">
-                      <img class="project-image" src="../assets/img/portfolio.png" alt="">
-                      <p>desing</p>
-                      <p>development</p>
+                      <img class="project-image" :src="project.image" alt="">
+                      <p v-for="(tag,index) in project.tags" :key="index">{{tag}}</p>
                     </div>
                   </a>
             </div>
@@ -106,7 +66,49 @@ export default {
         endX: 0
       },
       hover: false,
-      hoverRight: false
+      hoverRight: false,
+      projects: [
+        {
+          title: 'Modern portfolio',
+          url: '#',
+          image: require('@/assets/img/modern-portfolio.png'),
+          tags: [
+            'desing', 'development'
+          ],
+        },
+        {
+          title: 'Q&A coming soon',
+          url: '#',
+          image: require('@/assets/img/q&a.png'),
+          tags: [
+            'desing', 'development'
+          ],
+        },
+        {
+          title: 'Inbox UI',
+          url: 'https://ui-inbox.herokuapp.com/',
+          image: require('@/assets/img/inboxUI.png'),
+          tags: [
+            'development'
+          ],
+        },
+        {
+          title: 'Booking Rooms',
+          url: 'http://booking-rooms.herokuapp.com/',
+          image: require('@/assets/img/booking-rooms.png'),
+          tags: [
+            'desing', 'development'
+          ],
+        },
+        {
+          title: 'Portfolio',
+          url: 'https://pehlivanovic.netlify.app/',
+          image: require('@/assets/img/portfolio.png'),
+          tags: [
+            'desing', 'development'
+          ],
+        },
+      ]
     }
   },
   methods: {

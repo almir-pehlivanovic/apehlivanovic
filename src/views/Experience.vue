@@ -42,20 +42,10 @@
             </ul>
           </div>
           <div class="service-section-right">
-            <div class="service-section-right-content">
-                <h3>Technical Faculty of Bihac</h3>
-                <p>December 2020</p>
-                <p>I completed the first cycle of full-time study lasting 8 semesters / 4 years - 240 ECTS credits at the Faculty of Engineering, University of Bihać in the study program Electrical Engineering, Department of Informatics and gained the academic title and professional title of Bachelor of Electrical Engineering.</p>
-            </div>
-            <div class="service-section-right-content">
-                <h3>NTH Mobile</h3>
-                <p>May 2019 - June 2020</p>
-                <p>By applying for a student job that lasted one year and a month, I was on a break from web programming, and my role was Technical Operation Manager where I was trained and worked with Premium SMS services. Provided excellent customer care to maintain and improve customer relationships.</p>
-            </div>
-            <div class="service-section-right-content">
-                <h3>IDK Studio</h3>
-                <p>December 2017 - June 2018</p>
-                <p>I started my journey as a Web Developer by applying for an internship where I spent six months studied basic project requirements with assigned technical lead, and learning how to code websites using HTML, CSS, JavaScript, and jQuery, also develop applications using PHP programming language.</p>
+            <div v-for="experience in experiences" :key="experience.id" class="service-section-right-content">
+                <h3>{{ experience.title }}</h3>
+                <p>{{ experience.date }}</p>
+                <p>{{ experience.description }}</p>
             </div>
           </div>
         </div>
@@ -73,6 +63,26 @@ export default {
       },
       hover: false,
       hoverRight: false,
+      experiences: [
+        {
+          id: 1,
+          title: 'Technical Faculty of Bihac',
+          date: 'December 2020',
+          description: 'I completed the first cycle of full-time study lasting 8 semesters / 4 years - 240 ECTS credits at the Faculty of Engineering, University of Bihać in the study program Electrical Engineering, Department of Informatics and gained the academic title and professional title of Bachelor of Electrical Engineering.'
+        },
+         {
+          id: 2,
+          title: 'NTH Mobile',
+          date: 'May 2019 - June 2020',
+          description: 'By applying for a student job that lasted one year and a month, I was on a break from web programming, and my role was Technical Operation Manager where I was trained and worked with Premium SMS services. Provided excellent customer care to maintain and improve customer relationships.'
+        },
+         {
+          id: 3,
+          title: 'IDK Studio',
+          date: 'December 2017 - June 2018',
+          description: 'I started my journey as a Web Developer by applying for an internship where I spent six months studied basic project requirements with assigned technical lead, and learning how to code websites using HTML, CSS, JavaScript, and jQuery, also develop applications using PHP programming language.'
+        },
+      ]
     }
   },
   methods: {

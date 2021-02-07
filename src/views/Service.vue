@@ -44,26 +44,12 @@
             </ul>
           </div>
           <div class="service-section-right">
-            <div class="service-section-right-content">
-                <h3>Web Desing</h3>
-                <p>First impressions really matter. One of the key ingredients to a successful product is the creation of effective, efficient, and visually pleasing displays. In order to produce such high-quality displays, it is very important that you have an up to date, modern, and functional web site.</p>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Web Development</h3>
-                <p>A developer with the expertise required to develop both the front and back end of web applications using the most effective frameworks such as Laravel, VueJS, Bootstrap, Tailwind CSS. The architecture of your code will be adapted to all your needs as well as the needs of users.</p>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Graphic Design</h3>
-                <p>It is important to be up to date with the world of design. The design is constantly changing, new concepts appear, and old concepts return. A process that involves both the client and the designer in a position where your designs will be current, relevant, and suited to you and your users.</p>
-            </div>
-            <div class="service-section-right-content">
-                <h3>Maintenance & Support</h3>
-                <p>Maintaining your website is important, with monitoring you will never fear having an out-of-date application, or not having a backup. When your application is ready I will take care of all your questions and problems. You can contact me and I will help you with any problems you encounter.</p>
+            <div v-for="(service, index) in services" :key="index" class="service-section-right-content">
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
             </div>
           </div>
         </div>
-
-
     </div>
   </div>
 </template>
@@ -77,7 +63,25 @@ export default {
         endX: 0,
       },
       hover: false,
-      hoverRight: false
+      hoverRight: false,
+      services: [
+        {
+          title: 'Web Desing',
+          description: 'First impressions really matter. One of the key ingredients to a successful product is the creation of effective, efficient, and visually pleasing displays. In order to produce such high-quality displays, it is very important that you have an up to date, modern, and functional web site.'
+        },
+        {
+          title: 'Web Development',
+          description: 'A developer with the expertise required to develop both the front and back end of web applications using the most effective frameworks such as Laravel, VueJS, Bootstrap, Tailwind CSS. The architecture of your code will be adapted to all your needs as well as the needs of users.'
+        },
+        {
+          title: 'Graphic Design',
+          description: 'It is important to be up to date with the world of design. The design is constantly changing, new concepts appear, and old concepts return. A process that involves both the client and the designer in a position where your designs will be current, relevant, and suited to you and your users.'
+        },
+        {
+          title: 'Maintenance & Support',
+          description: 'Maintaining your website is important, with monitoring you will never fear having an out-of-date application, or not having a backup. When your application is ready I will take care of all your questions and problems. You can contact me and I will help you with any problems you encounter.'
+        },
+      ]
     }
   },
   methods: {

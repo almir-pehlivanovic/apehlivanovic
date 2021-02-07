@@ -248,6 +248,12 @@ nav{
   }
 }
 
+@media (max-width: 550px) {
+  .menu{
+    height: 95vh;
+  }
+}
+
 /*
  * And let's slide it in from the left
  */
