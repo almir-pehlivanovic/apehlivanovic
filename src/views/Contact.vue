@@ -43,7 +43,7 @@
             </div>
             <div class="service-section-right-content">
               <p class="text-success" v-if="textSuccess">{{ text }}</p>
-              <form action="" @submit.prevent="sendEmail" class="contact-form">
+              <form data-netlify="true" name="contact" method="POST" @submit.prevent="sendEmail" class="contact-form">
                 <input type="email" v-model="email" name="email" placeholder="Your email" required>
                 <button class="download-button" type="submit">Send</button>
               </form>
