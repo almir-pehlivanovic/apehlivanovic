@@ -217,7 +217,7 @@ nav{
   width: 100%;
   margin: -100px 0 0 -50px;
   padding-top: 125px;
-  height: 88.2vh;
+  height: 110.32vh;
   
   background: #ededed;
   list-style-type: none;
@@ -242,15 +242,6 @@ nav{
   .menu li {
     font-size: 44px;
     line-height: 1.5;
-  }
-  .menu {
-    height: 90vh;
-  }
-}
-
-@media (max-width: 550px) {
-  .menu{
-    height: 95vh;
   }
 }
 

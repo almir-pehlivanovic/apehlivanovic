@@ -1,7 +1,9 @@
 <template>
-  <div class="about">
-    <div class="overflow"></div>
-    <img src="../assets/img/aboutMe.jpg" alt="">
+  <div class="about"  @mousemove="mouseMove">
+    <div class="about-parallax">
+      <div class="overflow"></div>
+      <img class="parallax" src="../assets/img/aboutMe.jpg" alt="">
+    </div>
     <h1 class="title">about me</h1>
     <div class="carousel-navigation">
       <div class="left-navigation">
@@ -106,6 +108,24 @@ export default {
     }
   },
   methods: {
+    mouseMove(e){
+      let mouseX = e.clientX;
+      let mouseY = e.clientY;
+
+      let img = document.querySelector('.parallax');
+
+      let img_x = mouseX - this.coords(img).x;
+      let img_y = mouseY - this.coords(img).y;
+
+      img.style.transform = `translateY(-${img_y/40}px) translateX(-${img_x/40}px) translateZ(100px)`;
+    },
+    coords (el) {
+      let coords = el.getBoundingClientRect();
+      return {
+        x: coords.left / 2,
+        y: coords.top / 2
+      }
+    },
     goBack() {
       this.$store.commit("setPageTransition", "back");
       this.$router.push({
@@ -145,7 +165,17 @@ export default {
 </script>
 
 <style scoped>
-  .about img {
+  .about-parallax{
+    perspective: 1000px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+  }
+  .about-parallax img {
     height: 100vh;
     width: 100vw;
     z-index: -2;
