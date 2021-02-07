@@ -115,11 +115,13 @@ export default {
     font-size: 10rem;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
   }
   .home-text h2{
     font-size: 4rem;
     transition: all 0.3s ease-in-out;
     font-weight: 300;
+    filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
   }
   .home-explore{
     display: flex;

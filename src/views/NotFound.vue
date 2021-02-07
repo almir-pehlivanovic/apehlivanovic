@@ -62,6 +62,7 @@ export default {
     top: 60%;
     left: 50%;
     transform: translate(-50%, -40%);
+    filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
   }
   .not-found button{
     cursor: pointer;

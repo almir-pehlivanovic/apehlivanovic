@@ -250,6 +250,7 @@ export default {
     transform: translate(-60%,-60%);
     text-shadow: 0px 2px 3px #fff;
     transition: all 0.3s ease-in-out;
+    filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
   }
   .carousel-navigation{
     height: 0px;
