@@ -21,6 +21,13 @@
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" hidden>
+      <p style="display: none;">
+        <label>Don't fill this if you're human: <input name="bot-field" /></label>
+      </p>
+      <input type="email" name="email" placeholder="Your email" required>
+      <button type="submit">Send</button>
+    </form>
     <div id="app"></div>
       
     <!-- built files will be auto injected -->

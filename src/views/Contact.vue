@@ -40,8 +40,11 @@
             </div>
             <div class="service-section-right-content">
               <p class="text-success" v-if="textSuccess">{{ text }}</p>
-              <form @submit="handleSubmit" data-netlify="true" name="contact" method="POST" class="contact-form">
-                <input type="email" v-model="email" name="email" placeholder="Your email" required>
+              <form @submit.prevent="handleSubmit" name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" class="contact-form">
+                <p style="display: none;">
+                  <label>Don't fill this if you're human: <input name="bot-field" /></label>
+                </p>
+                <input type="email" v-model="form.email" name="email" placeholder="Your email" required>
                 <button class="download-button" type="submit">Send</button>
               </form>
            </div>
@@ -62,21 +65,31 @@ export default {
       hover: false,
       textSuccess: false,
       text: 'Your email was sent succesfully!',
-      email: ''
+      form:{
+        email: '',
+      }
     }
   },
   methods: {
-    handleSubmit(e) {
-      e.preventDefault()
-      let myForm = document.querySelector('.contact-form');
-      let formData = new FormData(myForm)
+    encode(data){
+      return Object.keys(data)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&')
+    },
+    handleSubmit(){
       fetch('/', {
         method: 'POST',
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
-      }).then(() => console.log('Form successfully submitted')).catch((error) =>
-        alert(error))
-    },
+        headers:{
+          'Content-Type': 'application/x-www-urlencoded'
+        },
+        body: this.encode({
+          'form-name': 'contact',
+          ...this.form
+        })
+      })
+      .then(() => console.log('Successfully sent'))
+      .catch(e => console.error(e))
+    }, 
     mouseMove(e){
       let mouseX = e.clientX;
       let mouseY = e.clientY;
