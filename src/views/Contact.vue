@@ -68,7 +68,7 @@ export default {
   methods: {
     handleSubmit(e) {
       e.preventDefault()
-      let myForm = document.getElementByClass('contact-form');
+      let myForm = document.querySelector('.contact-form');
       let formData = new FormData(myForm)
       fetch('/', {
         method: 'POST',
