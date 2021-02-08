@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-      <app-page-loader v-if="!isloaded"></app-page-loader>
-      <app-header v-if="isloaded"></app-header>
+      <app-page-loader :class="{'loader':isloaded}"></app-page-loader>
+      <app-header :class="{'loader':!isloaded}"></app-header>
     
       <transition
         :name="$store.state.pageTransition.name"
@@ -9,7 +9,7 @@
         v-on:after-enter="afterEnter"
         v-on:after-leave="afterLeave"
       >
-        <router-view class="transition" v-if="isloaded" />
+        <router-view class="transition" :class="{'loader':!isloaded}" />
       </transition>
   </div>
 </template>
@@ -51,6 +51,9 @@
   
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+  .loader{
+    visibility: hidden;
+  }
   *{
     padding: 0;
     margin: 0; 
