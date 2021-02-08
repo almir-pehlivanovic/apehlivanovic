@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <app-header></app-header>
+      <app-page-loader v-if="!isloaded"></app-page-loader>
+      <app-header v-if="isloaded"></app-header>
     
       <transition
         :name="$store.state.pageTransition.name"
@@ -8,7 +9,7 @@
         v-on:after-enter="afterEnter"
         v-on:after-leave="afterLeave"
       >
-        <router-view class="transition"/>
+        <router-view class="transition" v-if="isloaded" />
       </transition>
   </div>
 </template>
@@ -18,10 +19,17 @@
   import Store from "./store/index";
 
   import Header from './components/Header'
+  import PageLoader from './components/PageLoader'
 
   export default {
+    data: () => {
+      return {
+        isloaded: false
+      }
+    },
     components:{
       'app-header': Header,
+      'app-page-loader': PageLoader,
     },
     methods: {
       afterEnter: () => {
@@ -32,9 +40,9 @@
       }
     },
     mounted() {
-      document.onreadystatechange = () => { 
+      document.onreadystatechange = () => {
         if (document.readyState == "complete") { 
-            // run code here
+          this.isloaded = true;
         } 
       }
     },

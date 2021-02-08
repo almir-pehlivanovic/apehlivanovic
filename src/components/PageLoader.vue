@@ -19,7 +19,7 @@ export default {
         isloaded: false
       }
     },
-    ounted() {
+    mounted() {
       document.onreadystatechange = () => {
         if (document.readyState == "complete") { 
           this.isloaded = true;
