@@ -1,10 +1,9 @@
 <template>
   <div class="home">
-    <div class="overflow"></div>
-    <video autoplay muted loop class="video">
-        <source src="../assets/video/Home.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-    </video>
+    <div class="about-parallax">
+      <div class="overflow"></div>
+      <img class="parallax" src="../assets/img/aboutMe.jpg" alt="">
+    </div>
     <div class="home-lines">
       <div class="left-line"></div>
       <div class="right-line"></div>
@@ -71,16 +70,23 @@ export default {
 </script>
 
 <style  scoped>
-  .home video {
-    width: 100vw;
-    height: 100vh; 
-    z-index: -2;
-    object-fit:cover;
-    position: absolute; 
+ .about-parallax{
+    perspective: 1000px;
+    position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+  .about-parallax img {
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+    object-fit: cover;
+    position: absolute;
   }
   .home-lines{
     position: absolute;
