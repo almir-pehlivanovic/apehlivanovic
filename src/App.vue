@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-
-    <app-page-loader v-if="!showApp"></app-page-loader>
-      <app-header v-if="showApp"></app-header>
+      <app-header></app-header>
     
-      <transition  v-cloak
+      <transition
         :name="$store.state.pageTransition.name"
         :mode="$store.state.pageTransition.mode"
         v-on:after-enter="afterEnter"
         v-on:after-leave="afterLeave"
-        v-if="showApp"
       >
         <router-view class="transition"/>
       </transition>
@@ -21,17 +18,10 @@
   import Store from "./store/index";
 
   import Header from './components/Header'
-  import PageLoader from './components/PageLoader'
 
   export default {
     components:{
       'app-header': Header,
-      'app-page-loader': PageLoader
-    },
-    data(){
-      return{
-        showApp: false
-      }
     },
     methods: {
       afterEnter: () => {
@@ -41,11 +31,13 @@
         Store.commit("setPageTransition", "default");
       }
     },
-    mounted(){
-      setTimeout(() => {   
-          this.showApp = true; 
-        }, 5500)
-    }
+    mounted() {
+      document.onreadystatechange = () => { 
+        if (document.readyState == "complete") { 
+            // run code here
+        } 
+      }
+    },
   }
 </script>
 
@@ -57,9 +49,6 @@
     padding: 0;
     margin: 0; 
     box-sizing: border-box;
-  }
-  [v-cloak] {
-    display: none;
   }
   #app{
     font-family: 'Open Sans', sans-serif;
