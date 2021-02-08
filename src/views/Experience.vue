@@ -2,10 +2,7 @@
   <div class="experience"  @mousemove="mouseMove">
     <div class="experience-parallax">
       <div class="overflow"></div>
-      <video autoplay muted loop class="video parallax">
-        <source src="../assets/video/Experience.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
+      <img class="parallax" src="../assets/img/experience.jpg" alt="">
     </div>
     <h1 class="title">experience</h1>
     <div class="carousel-navigation">
@@ -156,16 +153,12 @@ export default {
     overflow: hidden;
     height: 100vh;
   }
-  .experience-parallax video {
+  .experience-parallax img {
+    height: 100vh;
     width: 100vw;
-    height: 100vh; 
     z-index: -2;
-    object-fit:cover;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    object-fit: cover;
+    position: absolute;
   }
     /* 
   scroll section of the page

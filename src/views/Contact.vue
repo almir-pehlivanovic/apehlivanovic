@@ -2,10 +2,7 @@
   <div class="contact"  @mousemove="mouseMove">
     <div class="contact-parallax">
       <div class="overflow"></div>
-      <video  autoplay muted loop class="video parallax">
-        <source src="../assets/video/Contact.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
+      <img class="parallax" src="../assets/img/contact.jpg" alt="">
     </div>
      <h1 class="title">contact</h1>
     <div class="carousel-navigation">
@@ -43,13 +40,11 @@
             </div>
             <div class="service-section-right-content">
               <p class="text-success" v-if="textSuccess">{{ text }}</p>
-              <form data-netlify="true" name="contact" method="POST" @submit.prevent="sendEmail" class="contact-form">
+              <form data-netlify="true" name="contact" method="POST" class="contact-form">
                 <input type="email" v-model="email" name="email" placeholder="Your email" required>
                 <button class="download-button" type="submit">Send</button>
               </form>
-                <!-- <h3>Web Development</h3>
-                <p>A developer with the expertise required to develop both the front and back end of web applications using the most effective frameworks such as Laravel, VueJS, Bootstrap, Tailwind CSS. The architecture of your code will be adapted to all your needs as well as the needs of users.</p> -->
-            </div>
+           </div>
           </div>
         </div>
     </div>
@@ -74,6 +69,7 @@ export default {
     sendEmail(){
       this.textSuccess = true;
       this.email = ''
+
     },
     mouseMove(e){
       let mouseX = e.clientX;
@@ -140,16 +136,12 @@ export default {
     height: 100vh;
     overflow: hidden;
   }
-  .contact-parallax video {
+  .contact-parallax img {
+    height: 100vh;
     width: 100vw;
-    height: 100vh; 
     z-index: -2;
-    object-fit:cover;
-    position: absolute; 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    object-fit: cover;
+    position: absolute;
   }
   
   /* 

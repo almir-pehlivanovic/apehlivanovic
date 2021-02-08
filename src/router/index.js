@@ -1,13 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Experience from '../views/Experience.vue'
-import Projects from '../views/Projects.vue'
-import Service from '../views/Service.vue'
-import Contact from '../views/Contact.vue'
-import WorkWith from '../views/WorkWith.vue'
-import NotFound from '../views/NotFound.vue'
 
 
 Vue.use(VueRouter)
@@ -21,37 +14,37 @@ const routes = [
   {
     path: '/about',
     name: 'About',
-    component: About
+    component: () => import(/* webpackChunkName: 'About' */ '../views/About')
   },
   {
     path: '/experience',
     name: 'Experience',
-    component: Experience
+    component: () => import(/* webpackChunkName: 'Experience' */ '../views/Experience')
   },
   {
     path: '/projects',
     name: 'Projects',
-    component: Projects
+    component: () => import(/* webpackChunkName: 'Projects' */ '../views/Projects')
   },
   {
     path: '/service',
     name: 'Service',
-    component: Service
+    component: () => import(/* webpackChunkName: 'Service' */ '../views/Service')
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: () => import(/* webpackChunkName: 'Contact' */ '../views/Contact')
   },
   {
     path: '/work-with',
     name: 'WorkWith',
-    component: WorkWith
+    component: () => import(/* webpackChunkName: 'WorkWith' */ '../views/WorkWith')
   },
   {
     path: '/:catchAll(.*)',
     name: 'NotFound',
-    component: NotFound
+    component: () => import(/* webpackChunkName: 'NotFound' */ '../views/NotFound')
   }
 ]
 

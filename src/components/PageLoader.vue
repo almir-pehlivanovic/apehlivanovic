@@ -1,5 +1,5 @@
 <template>
-  <div class="page-loader" v-if="!isLoaded">
+  <div class="page-loader" v-if="isLoaded">
     <img src="../assets/img/logo.png" alt="">
       <div class="loader-text">
           <h1>Almir Pehlivanovic
@@ -16,23 +16,16 @@
 export default {
     data(){
         return{
-            isLoaded: false
+            isLoaded: true
         }
     },
     mounted(){
-        this.showLoader()
+         setTimeout(() => {
+            document.onreadystatechange = () =>{
+                    this.isLoaded = false;
+            }
+        }, 5300)
     },
-    methods:{
-        showLoader(){
-            setTimeout(() => {
-                document.onreadystatechange = () =>{
-                    if(document.readyState == "complete"){
-                        this.isLoaded = true;
-                    }
-                }
-            }, 5000)
-        }
-    }
 }
 </script>
 
@@ -53,7 +46,7 @@ export default {
         height: 100px;
         transition: all 0.8s ease-in-out;
         filter: drop-shadow(0px 0px 12px rgb(0,0,0,0.25));
-        animation: zoomIn 1s cubic-bezier(0.77,0.2,0.05,1.0);
+        animation: zoomIn 1.5s cubic-bezier(0.77,0.2,0.05,1.0);
         z-index: 99;
     }
     .loader-text{
@@ -71,11 +64,11 @@ export default {
         right: -1px;
         bottom: 0;
         left:-2px;
-        animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0) 1s;
+        animation: slideRight 1.5s cubic-bezier(0.77,0.2,0.05,1.0) 1.5s;
          animation-fill-mode: forwards;
     }
     .loader-text h5 div{
-        animation: slideRight 1s cubic-bezier(0.77,0.2,0.05,1.0) 1.3s;
+        animation: slideRight 1.5s cubic-bezier(0.77,0.2,0.05,1.0) 1.8s;
          animation-fill-mode: forwards;
     }
      @keyframes zoomIn {
