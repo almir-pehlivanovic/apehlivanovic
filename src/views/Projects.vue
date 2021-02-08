@@ -419,9 +419,9 @@ export default {
     align-items: center;
     color: #cdcdcd;
     left: 30%;
-    bottom: 10%;
+    bottom: 50px;
     padding-left: 10px;
-    transform: translate(-70%, 90%);
+    transform: translateX(-70%);
   }
   .scroll-to-explore svg{
     height: 25px;
@@ -443,7 +443,7 @@ export default {
     }
     .carousel-navigation{
       transform: none;
-      bottom: 7%;
+      bottom: 60px;
       top: auto;
       left: 75px;
       right: 75px;
@@ -453,7 +453,6 @@ export default {
     }
     .scroll-to-explore{
       transform: translateX(-50%);
-      bottom: 6%;
       left: 50%;
       padding-left: 0;
     }
@@ -496,7 +495,7 @@ export default {
   }
   @media (max-width: 380px){
     .scroll-to-explore{
-      bottom: 56px;
+      bottom: 50px;
       font-size: 14px;
     }
     .scroll-to-explore svg {

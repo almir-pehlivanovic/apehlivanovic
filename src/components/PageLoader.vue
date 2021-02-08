@@ -38,6 +38,7 @@ export default {
         right: 0;
         bottom: 0;
         background: #08305D;
+        height: 100vh;
     }
     .page-loader img{
         width: 100px;
