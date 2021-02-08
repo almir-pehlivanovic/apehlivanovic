@@ -40,7 +40,7 @@
             </div>
             <div class="service-section-right-content">
               <p class="text-success" v-if="textSuccess">{{ text }}</p>
-              <form data-netlify="true" name="contact" method="POST" class="contact-form">
+              <form action="/contact/success" data-netlify="true" name="contact" method="POST" class="contact-form">
                 <input type="email" v-model="email" name="email" placeholder="Your email" required>
                 <button class="download-button" type="submit">Send</button>
               </form>
