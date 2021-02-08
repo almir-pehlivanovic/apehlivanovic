@@ -40,7 +40,7 @@
             </div>
             <div class="service-section-right-content">
               <p class="text-success" v-if="textSuccess">{{ text }}</p>
-              <form action="/index.html" data-netlify="true" name="contact" method="POST" class="contact-form">
+              <form @submit="handleSubmit" data-netlify="true" name="contact" method="POST" class="contact-form">
                 <input type="email" v-model="email" name="email" placeholder="Your email" required>
                 <button class="download-button" type="submit">Send</button>
               </form>
@@ -66,10 +66,16 @@ export default {
     }
   },
   methods: {
-    sendEmail(){
-      this.textSuccess = true;
-      this.email = ''
-
+    handleSubmit(e) {
+      e.preventDefault()
+      let myForm = document.getElementByClass('contact-form');
+      let formData = new FormData(myForm)
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      }).then(() => console.log('Form successfully submitted')).catch((error) =>
+        alert(error))
     },
     mouseMove(e){
       let mouseX = e.clientX;
