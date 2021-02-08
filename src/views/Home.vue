@@ -10,7 +10,7 @@
       <div class="right-line"></div>
     </div>
     <div class="home-text">
-      <h2>Hi there,</h2>
+      <h2>Hi there1,</h2>
       <h1>I'm Almir</h1>
     </div>
     <div class="home-footer">
