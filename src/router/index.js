@@ -42,11 +42,6 @@ const routes = [
     component: () => import(/* webpackChunkName: 'WorkWith' */ '../views/WorkWith')
   },
   {
-    path: '/contact/success',
-    name: 'Success',
-    component: () => import(/* webpackChunkName: 'Success' */ '../views/Success')
-  },
-  {
     path: '/:catchAll(.*)',
     name: 'NotFound',
     component: () => import(/* webpackChunkName: 'NotFound' */ '../views/NotFound')

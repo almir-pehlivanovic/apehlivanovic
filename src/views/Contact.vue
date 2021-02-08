@@ -87,7 +87,10 @@ export default {
           ...this.form
         })
       })
-      .then(() => console.log('Successfully sent'))
+      .then(() => {
+        console.log('Successfully sent')
+        this.textSuccess = true
+        })
       .catch(e => console.error(e))
     }, 
     mouseMove(e){
